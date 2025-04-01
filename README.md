@@ -34,9 +34,10 @@ This extension works with the following Line6 devices:
 
 While the extension is under review, you can install it manually:
 
-1. Download the latest release:
-   - Go to the [Releases page](https://github.com/opesoid/patch-collector/releases)
-   - Download the latest `.zip` file
+1. Get the source code:
+   - Click the green "Code" button above
+   - Click "Download ZIP" and extract it
+
 
 2. Install in Chrome:
    - Open Chrome and go to `chrome://extensions/`
