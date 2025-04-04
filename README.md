@@ -64,17 +64,33 @@ Full usage instructions are available in the extension's built-in guide which ca
 ### Project Structure
 
 ```
-patch-collector/
-├── background.js      # Background script
-├── content.js         # Content script
-├── guide.html         # User guide
-├── icon128.png        # Extension icon
-├── icon48.png         # Extension icon
-├── icon16.png         # Extension icon
-├── manifest.json      # Extension manifest
-├── popup.html         # Extension popup
-├── popup.js           # Popup logic
-└── styles.css         # Extension styles
+.
+├── manifest.json              # Extension manifest file
+├── README.md                  # This README file
+├── guide.html                 # User guide page
+├── privacy_policy.html        # Privacy policy page
+│
+├── css/
+│   └── styles.css             # Main CSS styles for content script UI
+│
+├── icons/
+│   ├── icon16.png             # Extension icon (16x16)
+│   ├── icon48.png             # Extension icon (48x48)
+│   └── icon128.png            # Extension icon (128x128)
+│
+├── js/
+│   ├── constants.js           # Constant values
+│   ├── content.js             # Content script injected into CustomTone pages
+│   ├── downloader.js          # Handles patch downloading logic
+│   ├── modal.js               # UI logic for modals
+│   ├── progress.js            # UI logic for progress indicators
+│   ├── ui.js                  # Builds the main extension UI panel
+│   └── utils.js               # Utility functions (parsing, helpers)
+│
+└── popup/
+    ├── popup.html             # HTML for the browser action popup
+    └── popup.js               # JavaScript logic for the popup
+
 ```
 
 
