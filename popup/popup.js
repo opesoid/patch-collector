@@ -40,24 +40,31 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     }
     
-    const buyMeACoffeeBtn = document.getElementById('bmc-button')
-    if (buyMeACoffeeBtn) {
-        buyMeACoffeeBtn.addEventListener('click', () => {
-            chrome.tabs.create({ url: 'https://www.buymeacoffee.com/opesoid' })
-        })
-    }
+    // Remove the Buy Me A Coffee button functionality
+    // const buyMeACoffeeBtn = document.getElementById('bmc-button')
+    // if (buyMeACoffeeBtn) {
+    //     buyMeACoffeeBtn.addEventListener('click', () => {
+    //         chrome.tabs.create({ url: 'https://www.buymeacoffee.com/opesoid' })
+    //     })
+    // }
     
+    // Remove the free patches link functionality
     const patchesLink = document.getElementById('free-patches')
     if (patchesLink) {
-        patchesLink.addEventListener('click', () => {
-            chrome.tabs.create({ url: 'https://www.mediafire.com/file/8b8wqj7447mka1t/4200-Helix-Patches-Reddit-2025.zip/file' })
-        })
+        patchesLink.remove() // Remove the element entirely
     }
     
     const userGuideLink = document.getElementById('user-guide')
     if (userGuideLink) {
         userGuideLink.addEventListener('click', () => {
             chrome.tabs.create({ url: chrome.runtime.getURL('guide.html') })
+        })
+    }
+    
+    const privacyPolicyLink = document.getElementById('privacy-policy')
+    if (privacyPolicyLink) {
+        privacyPolicyLink.addEventListener('click', () => {
+            chrome.tabs.create({ url: chrome.runtime.getURL('privacy_policy.html') })
         })
     }
 }) 

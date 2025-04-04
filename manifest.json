@@ -2,11 +2,9 @@
   "manifest_version": 3,
   "name": "Patch Collector",
   "version": "1.0.0",
-  "description": "Download guitar patches from CustomTone with advanced features",
+  "description": "Download and organize guitar patches from Line6 CustomTone website",
   "permissions": [
     "activeTab",
-    "downloads",
-    "scripting",
     "storage"
   ],
   "host_permissions": [
@@ -37,8 +35,8 @@
   ],
   "web_accessible_resources": [
     {
-      "resources": ["guide.html"],
-      "matches": ["https://line6.com/*"]
+      "resources": ["guide.html", "privacy_policy.html"],
+      "matches": ["<all_urls>"]
     }
   ],
   "icons": {

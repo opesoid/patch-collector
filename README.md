@@ -14,15 +14,7 @@ A browser extension that enhances your experience on the Line6 CustomTone websit
 
 ## Supported Devices
 
-This extension works with the following Line6 devices:
-- Helix Floor
-- Helix LT
-- Helix Rack
-- Helix Native
-- HX Effects
-- HX Stomp
-- Pod Go
-- Pod Go Wireless
+This extension works with Line6 guitar processors including Helix and Pod Go series devices.
 
 ## Installation
 
@@ -34,10 +26,9 @@ This extension works with the following Line6 devices:
 
 While the extension is under review, you can install it manually:
 
-1. Get the source code:
-   - Click the green "Code" button above
-   - Click "Download ZIP" and extract it
-
+1. Download the latest release:
+   - Go to the [Releases page](https://github.com/opesoid/patch-collector/releases)
+   - Download the latest `.zip` file
 
 2. Install in Chrome:
    - Open Chrome and go to `chrome://extensions/`
