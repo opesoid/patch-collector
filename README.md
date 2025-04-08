@@ -18,31 +18,36 @@ This extension works with Line6 guitar processors including Helix and Pod Go ser
 
 ## Installation
 
-### Chrome Web Store Status
+### From the Chrome Web Store (Recommended)
 
-⏳ The extension is currently under review by the Chrome Web Store team. Once approved, it will be available for direct installation from the store.
+The Patch Collector extension is now available directly from the Chrome Web Store!
 
-### Manual Installation (Current Method)
+[![Install from Chrome Web Store](https://storage.googleapis.com/web-hosted-media/web/assets/images/chrome-web-store-badge.svg)](https://chromewebstore.google.com/detail/patch-collector/oimeamnghaeobjknbcgjmcpheplnmjpg)
 
-While the extension is under review, you can install it manually:
+Click the button above or visit the [Patch Collector page on the Chrome Web Store](https://chromewebstore.google.com/detail/patch-collector/oimeamnghaeobjknbcgjmcpheplnmjpg) and click "Add to Chrome". This is the easiest way to install and automatically receive updates.
 
-1. Download the latest release:
-   - Go to the [Releases page](https://github.com/opesoid/patch-collector/releases)
-   - Download the latest `.zip` file
+### Manual Installation (Alternative)
 
-2. Install in Chrome:
-   - Open Chrome and go to `chrome://extensions/`
-   - Enable "Developer mode" in the top-right corner
-   - Click "Load unpacked"
-   - Select the extracted folder (if you downloaded the zip) or the cloned repository folder
-   - The extension icon should appear in your browser toolbar
+This method is primarily for developers or users who want to install a specific version not yet on the Web Store.
 
-3. Verify Installation:
-   - The Patch Collector icon should appear in your Chrome toolbar
-   - Click the icon to ensure the popup opens
-   - Visit [Line6 CustomTone](https://line6.com/customtone/) to test functionality
+1.  **Download the Source Code:**
+    *   Go to the [Releases page](https://github.com/opesoid/patch-collector/releases) on GitHub.
+    *   Download the `.zip` file for the desired release (e.g., `patch-collector-v1.0.0.zip`).
+    *   **Important:** Unzip the downloaded file into a dedicated folder on your computer. Remember where you save this folder.
 
-Note: When installing manually, Chrome may show a warning about developer mode extensions. This is normal for manually installed extensions and you can safely proceed.
+2.  **Install in Chrome:**
+    *   Open Google Chrome.
+    *   Type `chrome://extensions/` into the address bar and press Enter.
+    *   Enable "Developer mode" using the toggle switch in the top-right corner of the page.
+    *   Click the "Load unpacked" button that appears.
+    *   Navigate to and select the folder where you **unzipped** the downloaded source code in Step 1.
+    *   The Patch Collector extension icon should now appear in your browser toolbar and in the list on the `chrome://extensions/` page.
+
+3.  **Verify Installation:**
+    *   Click the Patch Collector icon in your Chrome toolbar to ensure the popup window opens correctly.
+    *   Visit the [Line6 CustomTone website](https://line6.com/customtone/) and log in to check if the extension's features appear on the page.
+
+**Note:** When installing manually, Chrome might display a warning like "Disable developer mode extensions" upon restarting. This is expected for extensions loaded this way. You can safely dismiss the warning. However, be aware that manually installed extensions do not update automatically. You will need to repeat the download and installation process to get newer versions.
 
 ## Usage
 
