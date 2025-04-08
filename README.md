@@ -22,9 +22,7 @@ This extension works with Line6 guitar processors including Helix and Pod Go ser
 
 The Patch Collector extension is now available directly from the Chrome Web Store!
 
-[![Install from Chrome Web Store](https://developer.chrome.com/images/chrome-web-store-badge.png)](https://chromewebstore.google.com/detail/patch-collector/oimeamnghaeobjknbcgjmcpheplnmjpg)
-
-Click the button above or visit the [Patch Collector page on the Chrome Web Store](https://chromewebstore.google.com/detail/patch-collector/oimeamnghaeobjknbcgjmcpheplnmjpg) and click "Add to Chrome". This is the easiest way to install and automatically receive updates.
+Visit the [Patch Collector page on the Chrome Web Store](https://chromewebstore.google.com/detail/patch-collector/oimeamnghaeobjknbcgjmcpheplnmjpg) and click "Add to Chrome". This is the easiest way to install and automatically receive updates.
 
 ### Manual Installation (Alternative)
 
