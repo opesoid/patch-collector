@@ -23,8 +23,7 @@ This extension works with Line6 guitar processors including Helix and Pod Go ser
 This method is primarily for developers or users who want to install a specific version not yet on the Web Store.
 
 1.  **Download the Source Code:**
-    *   Go to the [Releases page](https://github.com/opesoid/patch-collector/releases) on GitHub.
-    *   Download the `.zip` file for the desired release (e.g., `patch-collector-v1.0.0.zip`).
+    *   Download the [Source Code](https://github.com/opesoid/patch-collector/archive/refs/heads/main.zip) from my GitHub repo.
     *   **Important:** Unzip the downloaded file into a dedicated folder on your computer. Remember where you save this folder.
 
 2.  **Install in Chrome:**
