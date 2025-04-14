@@ -18,12 +18,6 @@ This extension works with Line6 guitar processors including Helix and Pod Go ser
 
 ## Installation
 
-### From the Chrome Web Store (Recommended)
-
-The Patch Collector extension is now available directly from the Chrome Web Store!
-
-Visit the [Patch Collector page on the Chrome Web Store](https://chromewebstore.google.com/detail/patch-collector/oimeamnghaeobjknbcgjmcpheplnmjpg) and click "Add to Chrome". This is the easiest way to install and automatically receive updates.
-
 ### Manual Installation (Alternative)
 
 This method is primarily for developers or users who want to install a specific version not yet on the Web Store.
@@ -110,6 +104,5 @@ If you find this extension helpful, consider supporting its development:
 
 ## Contact
 
-- Website: [opesoid.co.uk](https://opesoid.co.uk)
 - GitHub: [opesoid](https://github.com/opesoid)
-- Email: support@opesoid.co.uk 
+
