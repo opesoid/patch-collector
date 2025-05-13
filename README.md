@@ -1,3 +1,5 @@
+> ⚠️ **Notice:** This project is not actively maintained and further updates will remain paused until **mid 2026**, due to a move to another country!
+
 # Patch Collector Chrome Extension
 
 A browser extension that enhances your experience on the Line6 CustomTone website by providing advanced features for downloading and organizing guitar patches.
