@@ -96,7 +96,7 @@ Full usage instructions are available in the extension's built-in guide which ca
 
 If you find this extension helpful, consider supporting its development:
 
-[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="150">](https://www.buymeacoffee.com/opesoid)
+[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="150">](#)
 
 ## Acknowledgments
 
