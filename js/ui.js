@@ -324,7 +324,7 @@ const createUI = async () => {
                     
                     await downloadPatchWithMetadata(button, saveMetadata);
                     
-                    await new Promise(resolve => setTimeout(resolve, 500))
+                    await new Promise(resolve => setTimeout(resolve, 1))
                 }
             }
             
@@ -367,7 +367,7 @@ const createUI = async () => {
                 
                 await downloadPatchWithMetadata(button, saveMetadata);
                 
-                await new Promise(resolve => setTimeout(resolve, 500))
+                await new Promise(resolve => setTimeout(resolve, 1))
             }
             
             if (downloadedPatches > 0) {
@@ -474,7 +474,7 @@ const createUI = async () => {
                     
                     await downloadPatchWithMetadata(button, saveMetadata);
                     
-                    await new Promise(resolve => setTimeout(resolve, 500))
+                    await new Promise(resolve => setTimeout(resolve, 1))
                 }
             }
             

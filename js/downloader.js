@@ -6,7 +6,7 @@ const downloadCurrentPage = async (saveMetadata = false) => {
         await downloadPatchWithMetadata(button, saveMetadata);
         
         // Add a small delay to prevent browser throttling
-        await new Promise(resolve => setTimeout(resolve, 100))
+        await new Promise(resolve => setTimeout(resolve, 1))
     }
 }
 
@@ -30,7 +30,7 @@ const downloadAllPages = async (deviceChoice, numPages, saveMetadata = false) =>
             await downloadPatchWithMetadata(button, saveMetadata);
             
             // Add a small delay to prevent browser throttling
-            await new Promise(resolve => setTimeout(resolve, 100))
+            await new Promise(resolve => setTimeout(resolve, 1))
         }
     }
 }
@@ -55,7 +55,7 @@ const downloadKeywordPatches = async (deviceChoice, searchTerm, numPages, saveMe
             await downloadPatchWithMetadata(button, saveMetadata);
             
             // Add a small delay to prevent browser throttling
-            await new Promise(resolve => setTimeout(resolve, 300))
+            await new Promise(resolve => setTimeout(resolve, 1))
         }
     }
 }
