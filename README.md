@@ -7,10 +7,8 @@ A browser extension that enhances your experience on the Line6 CustomTone websit
 ## Features
 
 - Download patches from multiple pages at once
-- Save metadata with your patches (artist, model, genre, etc.)
 - Search and filter patches before downloading
 - Track download progress
-- Customize your experience with various settings
 
 ## Supported Devices
 
@@ -94,7 +92,7 @@ Full usage instructions are available in the extension's built-in guide which ca
 
 If you find this extension helpful, consider supporting its development:
 
-[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="150">](#)
+[<img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" width="150">](https://buymeacoffee.com/opesoid)
 
 ## Acknowledgments
 
