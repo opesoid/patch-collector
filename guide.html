@@ -1,283 +1,401 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patch Collector - User Guide</title>
     <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --background-dark: #0f172a;
+            --background-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --success-bg: rgba(16, 185, 129, 0.1);
+            --success-border: rgba(16, 185, 129, 0.2);
+            --warning-bg: rgba(245, 158, 11, 0.1);
+            --warning-border: rgba(245, 158, 11, 0.2);
+            --error-bg: rgba(239, 68, 68, 0.1);
+            --error-border: rgba(239, 68, 68, 0.2);
+            --radius-lg: 16px;
+            --radius-md: 12px;
+            --radius-sm: 8px;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-primary);
+            background-color: var(--background-dark);
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
+
         h1 {
-            color: #2196f3;
+            color: var(--primary-color);
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            letter-spacing: -0.02em;
         }
+
         h2 {
-            color: #2196f3;
-            border-bottom: 1px solid #eaeaea;
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-        img {
-            max-width: 100%;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            padding: 5px;
-            margin: 10px 0;
-        }
-        code {
-            background-color: #f5f5f5;
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: monospace;
-        }
-        .tip {
-            background-color: #e3f2fd;
-            border-left: 4px solid #2196f3;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        .warning {
-            background-color: #fff8e1;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-        }
-        .important {
-            background-color: #ffebee;
-            border-left: 4px solid #f44336;
-            padding: 15px;
-            margin: 20px 0;
-            border-radius: 0 4px 4px 0;
-            font-weight: bold;
-        }
-        .steps {
-            margin-left: 20px;
-        }
-        .steps li {
-            margin-bottom: 15px;
-        }
-        .button {
-            display: inline-block;
-            background-color: #2196f3;
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            margin-top: 20px;
-            transition: background-color 0.3s;
-        }
-        .button:hover {
-            background-color: #0d8aee;
-        }
-        footer {
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
             margin-top: 50px;
-            text-align: center;
-            color: #666;
+            font-size: 1.5em;
+        }
+
+        h3 {
+            color: var(--text-primary);
+            margin-top: 30px;
+            font-size: 1.25em;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        ul,
+        ol {
+            color: var(--text-secondary);
+            padding-left: 20px;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        code {
+            background-color: rgba(0, 0, 0, 0.3);
+            color: var(--primary-color);
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-family: 'SF Mono', 'Menlo', 'Monaco', 'Courier New', monospace;
             font-size: 0.9em;
+        }
+
+        .section-card {
+            background-color: var(--background-card);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .alert {
+            padding: 16px;
+            border-radius: var(--radius-md);
+            margin: 24px 0;
+            border: 1px solid transparent;
+        }
+
+        .alert.tip {
+            background-color: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.2);
+        }
+
+        .alert.warning {
+            background-color: var(--warning-bg);
+            border-color: var(--warning-border);
+        }
+
+        .alert.important {
+            background-color: var(--error-bg);
+            border-color: var(--error-border);
+        }
+
+        .alert strong {
+            display: block;
+            margin-bottom: 4px;
+        }
+
+        .steps {
+            counter-reset: step;
+            list-style: none;
+            padding: 0;
+        }
+
+        .steps li {
+            position: relative;
+            padding-left: 40px;
+            margin-bottom: 16px;
+        }
+
+        .steps li::before {
+            counter-increment: step;
+            content: counter(step);
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 28px;
+            height: 28px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border-color);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 28px;
+            color: var(--primary-color);
+            font-weight: 600;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
         }
     </style>
 </head>
+
 <body>
-    <h1>Patch Collector - User Guide</h1>
-    
-    <div class="important">
-        <strong>⚠️ IMPORTANT:</strong> You MUST be logged into your Line6 CustomTone account to download patches. This extension enhances the download functionality, but it cannot bypass the login requirement.
-    </div>
-    
-    <h2>Introduction</h2>
-    <p>
-        Welcome to the Patch Collector extension! This tool enhances your experience on the CustomTone website by providing advanced features for downloading and organizing guitar patches.
-    </p>
-    <p>
-        Key features include:
-    </p>
-    <ul>
-        <li>Download patches from multiple pages at once</li>
-        <li>Save metadata with your patches (artist, model, genre, etc.)</li>
-        <li>Search and filter patches before downloading</li>
-        <li>Track download progress</li>
-        <li>Customize your experience with various settings</li>
-    </ul>
+    <h1>User Guide</h1>
 
-    <h3>Supported Devices</h3>
-    <p>
-        Patch Collector works with Line6 guitar processors including Helix and Pod Go series devices.
-    </p>
-
-    <h2>Getting Started</h2>
-    <h3>Prerequisites</h3>
-    <ol class="steps">
-        <li>Visit <a href="https://line6.com/customtone/" target="_blank">Line6 CustomTone</a></li>
-        <li>Sign in to your Line6 account (or create one if you don't have it)</li>
-        <li>Make sure you're logged in before attempting to download any patches</li>
-    </ol>
-    
-    <h3>Enabling the Extension</h3>
-    <p>
-        After installing the extension, you'll need to enable it to use its features:
-    </p>
-    <ol class="steps">
-        <li>Click on the Patch Collector icon in your browser's extension toolbar</li>
-        <li>Toggle the switch at the top to enable the extension</li>
-        <li>When the toggle is green, the extension is active</li>
-    </ol>
-    <p>
-        Once enabled, the extension interface will automatically appear when you visit the CustomTone website.
-    </p>
-
-    <h3>Interface Overview</h3>
-    <p>
-        The extension adds a panel to the CustomTone page with three main tabs:
-    </p>
-    <ul>
-        <li><strong>Settings</strong>: Configure download options and preferences</li>
-        <li><strong>Search</strong>: Filter and search patches before downloading</li>
-        <li><strong>Bulk</strong>: Download multiple pages of patches at once</li>
-    </ul>
-
-    <h2>Settings Tab</h2>
-    <p>
-        The Settings tab allows you to customize your download preferences:
-    </p>
-    <h3>Device Selection</h3>
-    <p>
-        Choose your preferred device from the dropdown menu. This helps filter patches specifically designed for your device.
-    </p>
-    
-    <h3>Sorting Options</h3>
-    <p>
-        You can sort patches by:
-    </p>
-    <ul>
-        <li>Recent (newest first)</li>
-        <li>Popular (most downloaded)</li>
-        <li>Rating (highest rated)</li>
-    </ul>
-    
-    <h3>Metadata Preferences</h3>
-    <p>
-        Choose what information to save with your patches:
-    </p>
-    <ul>
-        <li>Artist name</li>
-        <li>Genre</li>
-        <li>Model information</li>
-        <li>Description</li>
-        <li>Date created</li>
-    </ul>
-    <p>
-        This metadata will be saved in a JSON file alongside each downloaded patch.
-    </p>
-
-    <div class="tip">
-        <strong>Tip:</strong> Saving metadata makes it easier to organize and search your patches later using external tools.
+    <div class="alert important">
+        <strong>⚠️ IMPORTANT</strong>
+        You MUST be logged into your Line6 CustomTone account to download patches. This extension enhances the download
+        functionality, but it cannot bypass the login requirement.
     </div>
 
-    <h2>Search Tab</h2>
-    <p>
-        The Search tab lets you find specific patches before downloading:
-    </p>
-    <ol class="steps">
-        <li>Enter search terms in the search box</li>
-        <li>Use filters to narrow results by genre, rating, etc.</li>
-        <li>Click "Search" to find matching patches</li>
-        <li>Review the results in the list</li>
-        <li>Select patches you want to download by checking the boxes</li>
-        <li>Click "Download Selected" to save only those patches</li>
-    </ol>
-    
-    <h3>Downloading Current Page</h3>
-    <p>
-        To download all patches from the current page you're viewing:
-    </p>
-    <ol class="steps">
-        <li>Navigate to the page with patches you want</li>
-        <li>Open the extension panel</li>
-        <li>Click the "Download Current Page" button in the Search tab</li>
-    </ol>
+    <div class="section-card">
+        <h2>Introduction</h2>
+        <p>
+            Welcome to the Patch Collector extension! This tool enhances your experience on the CustomTone website by
+            providing advanced features for downloading and organizing guitar patches.
+        </p>
+        <p>
+            Key features include:
+        </p>
+        <ul>
+            <li>Download patches from multiple pages at once</li>
+            <li>Search and filter patches before downloading</li>
+            <li>Track download progress</li>
+            <li>Customize your experience with various settings</li>
+        </ul>
 
-    <h2>Bulk Tab</h2>
-    <p>
-        The Bulk tab is for downloading multiple pages of patches at once:
-    </p>
-    <ol class="steps">
-        <li>Enter the starting page number (default is 1)</li>
-        <li>Enter the ending page number</li>
-        <li>Optionally set additional filters</li>
-        <li>Click "Start Bulk Download"</li>
-    </ol>
-    
-    <div class="warning">
-        <strong>Note:</strong> Bulk downloads can take some time depending on the number of pages and your internet connection speed. The extension will show a progress indicator.
+        <h3>Supported Devices</h3>
+        <p>
+            Patch Collector works with Line6 guitar processors including:
+        </p>
+        <ul>
+            <li>Helix Floor, LT, Rack, and Native</li>
+            <li>HX Effects and HX Stomp</li>
+            <li>Pod Go and Pod Go Wireless</li>
+        </ul>
     </div>
 
-    <h2>Download Progress</h2>
-    <p>
-        During downloads, a progress bar will appear showing:
-    </p>
-    <ul>
-        <li>Number of patches downloaded</li>
-        <li>Total patches to download</li>
-        <li>Current download speed</li>
-        <li>Estimated time remaining</li>
-    </ul>
-    <p>
-        You can cancel a download at any time by clicking the "Cancel" button next to the progress bar.
-    </p>
+    <div class="section-card">
+        <h2>Getting Started</h2>
+        <h3>Prerequisites</h3>
+        <ol class="steps">
+            <li>Visit <a href="https://line6.com/customtone/" target="_blank">Line6 CustomTone</a></li>
+            <li>Sign in to your Line6 account (or create one if you don't have it)</li>
+            <li>Make sure you're logged in before attempting to download any patches</li>
+        </ol>
 
-    <h2>Tips and Tricks</h2>
-    <ul>
-        <li><strong>Naming convention:</strong> Patches are saved with a consistent naming format: [Artist] - [Patch Name] - [Device].hlx (or appropriate extension)</li>
-        <li><strong>Download location:</strong> All patches are saved to your browser's default download location</li>
-        <li><strong>Memory usage:</strong> For very large bulk downloads, consider breaking them into smaller batches</li>
-        <li><strong>Filtering:</strong> Use genre filters to find patches that match your playing style</li>
-    </ul>
+        <h3>Enabling the Extension</h3>
+        <p>
+            After installing the extension, you'll need to enable it to use its features:
+        </p>
+        <ol class="steps">
+            <li>Click on the Patch Collector icon in your browser's extension toolbar</li>
+            <li>Toggle the switch at the top to enable the extension</li>
+            <li>When the toggle is green, the extension is active</li>
+        </ol>
+        <p>
+            Once enabled, the extension interface will automatically appear when you visit the CustomTone website.
+        </p>
+    </div>
 
-    <h2>Troubleshooting</h2>
-    
-    <h3>Extension Not Appearing</h3>
-    <p>
-        If the extension panel doesn't appear on the CustomTone website:
-    </p>
-    <ol class="steps">
-        <li>Check that the extension is enabled (the toggle should be green)</li>
-        <li>Refresh the CustomTone page</li>
-        <li>Ensure you're on a valid page at line6.com/customtone/</li>
-    </ol>
-    
-    <h3>Downloads Not Starting</h3>
-    <p>
-        If patches aren't downloading:
-    </p>
-    <ol class="steps">
-        <li>Check that you're logged into your Line6 account</li>
-        <li>Check your internet connection</li>
-        <li>Make sure your browser's download settings allow multiple downloads</li>
-        <li>Ensure you haven't blocked downloads from the CustomTone site</li>
-        <li>Try restarting your browser</li>
-    </ol>
-    
-    <h3>Missing Metadata</h3>
-    <p>
-        If metadata isn't being saved:
-    </p>
-    <ol class="steps">
-        <li>Check the Settings tab and ensure metadata options are selected</li>
-        <li>Try downloading a different patch to see if the issue persists</li>
-    </ol>
+    <div class="section-card">
+        <h2>Interface Overview</h2>
+        <p>
+            The extension adds a panel to the CustomTone page with three main tabs:
+        </p>
+        <ul>
+            <li><strong>Settings</strong>: Configure download options and preferences</li>
+            <li><strong>Search</strong>: Filter and search patches before downloading</li>
+            <li><strong>Bulk</strong>: Download multiple pages of patches at once</li>
+        </ul>
+    </div>
+
+    <div class="section-card">
+        <h2>Settings Tab</h2>
+        <p>
+            The Settings tab allows you to customize your download preferences:
+        </p>
+
+        <h3>Device Selection</h3>
+        <p>
+            Choose your preferred device from the dropdown menu. This helps filter patches specifically designed for
+            your
+            device.
+        </p>
+
+        <h3>Sorting Options</h3>
+        <p>
+            You can sort patches by:
+        </p>
+        <ul>
+            <li>Popular (most downloaded)</li>
+            <li>Rating (highest rated)</li>
+        </ul>
+    </div>
+
+    <div class="section-card">
+        <h2>Search Tab</h2>
+        <p>
+            The Search tab lets you find specific patches before downloading:
+        </p>
+        <ol class="steps">
+            <li>Enter search terms in the search box</li>
+            <li>Use filters to narrow results by genre, rating, etc.</li>
+            <li>Click "Search" to find matching patches</li>
+            <li>Review the results in the list</li>
+            <li>Select patches you want to download by checking the boxes</li>
+            <li>Click "Download Selected" to save only those patches</li>
+        </ol>
+
+        <h3>Downloading Current Page</h3>
+        <p>
+            To download all patches from the current page you're viewing:
+        </p>
+        <ol class="steps">
+            <li>Navigate to the page with patches you want</li>
+            <li>Open the extension panel</li>
+            <li>Click the "Download Current Page" button in the Search tab</li>
+        </ol>
+    </div>
+
+    <div class="section-card">
+        <h2>Bulk Tab</h2>
+        <p>
+            The Bulk tab is for downloading multiple pages of patches at once:
+        </p>
+        <ol class="steps">
+            <li>Enter the number of pages you want to download (default is 5)</li>
+            <li>Start from the first page of results</li>
+            <li>Use search filters if needed</li>
+            <li>Click "Download All Patches"</li>
+        </ol>
+
+        <div class="alert warning">
+            <strong>Note</strong>
+            Bulk downloads can take some time depending on the number of pages and your internet connection speed. The
+            extension will show a progress indicator.
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>Download Progress</h2>
+        <p>
+            During downloads, a progress bar will appear showing:
+        </p>
+        <ul>
+            <li>Number of patches downloaded</li>
+            <li>Total patches to download</li>
+            <li>Current download speed</li>
+            <li>Estimated time remaining</li>
+        </ul>
+        <p>
+            You can cancel a download at any time by clicking the "Cancel" button next to the progress bar.
+        </p>
+    </div>
+
+    <div class="section-card">
+        <h2>Tips and Tricks</h2>
+        <ul>
+            <li><strong>Naming convention:</strong> Patches are saved with a consistent naming format: [Artist] - [Patch
+                Name] - [Device].hlx (or appropriate extension)</li>
+            <li><strong>Download location:</strong> All patches are saved to your browser's default download location
+            </li>
+            <li><strong>Memory usage:</strong> For very large bulk downloads, consider breaking them into smaller
+                batches
+            </li>
+            <li><strong>Filtering:</strong> Use genre filters to find patches that match your playing style</li>
+        </ul>
+    </div>
+
+    <div class="section-card">
+        <h2>Support This Project</h2>
+        <p>
+            If you find Patch Collector useful, please consider supporting its development!
+        </p>
+        <div style="margin-top: 20px;">
+            <a href="https://buymeacoffee.com/opesoid" target="_blank"
+                style="display: inline-flex; align-items: center; background-color: #FFDD00; color: #000000; text-decoration: none; font-weight: 700; font-size: 16px; padding: 12px 24px; border-radius: 8px; transition: transform 0.2s;">
+                <svg style="width: 20px; height: 20px; margin-right: 8px;" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
+                </svg>
+                Buy me a coffee
+            </a>
+        </div>
+    </div>
+
+    <div class="section-card">
+        <h2>Troubleshooting</h2>
+
+        <h3>Extension Not Appearing</h3>
+        <p>
+            If the extension panel doesn't appear on the CustomTone website:
+        </p>
+        <ol class="steps">
+            <li>Check that the extension is enabled (the toggle should be green)</li>
+            <li>Refresh the CustomTone page</li>
+            <li>Ensure you're on a valid page at line6.com/customtone/</li>
+        </ol>
+
+        <h3>Downloads Not Starting</h3>
+        <p>
+            If patches aren't downloading:
+        </p>
+        <ol class="steps">
+            <li>Check that you're logged into your Line6 account</li>
+            <li>Check your internet connection</li>
+            <li>Make sure your browser's download settings allow multiple downloads</li>
+            <li>Ensure you haven't blocked downloads from the CustomTone site</li>
+            <li>Try restarting your browser</li>
+        </ol>
+    </div>
 
     <footer>
-        <p>Patch Collector v1.0.0 • Developed by <a href="https://github.com/opesoid" target="_blank">Opes</a> • <a href="privacy_policy.html">Privacy Policy</a></p>
+        <p>Patch Collector v1.1 • Developed by <a href="https://opes.dev" target="_blank">opes.dev</a> • <a
+                href="privacy_policy.html">Privacy Policy</a></p>
+        <p style="font-size: 0.85em; opacity: 0.7; margin-top: 4px;">Last updated: 5th February 2025</p>
+        <p style="font-size: 0.85em; opacity: 0.7; margin-top: 8px;">
+            Not affiliated with Line 6 or Yamaha Guitar Group, Inc.
+        </p>
     </footer>
 
 </body>
-</html> 
+
+</html>

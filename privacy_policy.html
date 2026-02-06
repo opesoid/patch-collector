@@ -1,67 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patch Collector - Privacy Policy</title>
     <style>
+        :root {
+            --primary-color: #3b82f6;
+            --primary-hover: #2563eb;
+            --background-dark: #0f172a;
+            --background-card: #1e293b;
+            --text-primary: #f8fafc;
+            --text-secondary: #94a3b8;
+            --border-color: rgba(255, 255, 255, 0.1);
+            --radius-lg: 16px;
+            --radius-md: 12px;
+        }
+
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             line-height: 1.6;
-            color: #333;
+            color: var(--text-primary);
+            background-color: var(--background-dark);
             max-width: 800px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 40px 20px;
         }
+
         h1 {
-            color: #2196f3;
+            color: var(--primary-color);
             text-align: center;
-            margin-bottom: 30px;
+            margin-bottom: 40px;
+            font-size: 2.5em;
+            letter-spacing: -0.02em;
         }
+
         h2 {
-            color: #2196f3;
-            border-bottom: 1px solid #eaeaea;
-            padding-bottom: 10px;
-            margin-top: 40px;
-        }
-        section {
-            margin-bottom: 30px;
-        }
-        footer {
+            color: var(--text-primary);
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 12px;
             margin-top: 50px;
-            text-align: center;
-            color: #666;
-            font-size: 0.9em;
-            border-top: 1px solid #eaeaea;
-            padding-top: 20px;
+            font-size: 1.5em;
         }
+
+        section {
+            background-color: var(--background-card);
+            padding: 24px;
+            border-radius: var(--radius-lg);
+            border: 1px solid var(--border-color);
+            margin-bottom: 24px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+
+        section h2 {
+            margin-top: 0;
+            border-bottom: none;
+            color: var(--primary-color);
+            font-size: 1.25em;
+            margin-bottom: 16px;
+        }
+
+        p {
+            color: var(--text-secondary);
+            margin-bottom: 16px;
+        }
+
+        ul {
+            color: var(--text-secondary);
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        strong {
+            color: var(--text-primary);
+        }
+
+        a {
+            color: var(--primary-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: var(--primary-hover);
+            text-decoration: underline;
+        }
+
+        footer {
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-secondary);
+            font-size: 0.9em;
+            border-top: 1px solid var(--border-color);
+            padding-top: 30px;
+        }
+
         .last-updated {
             font-style: italic;
-            color: #666;
+            color: var(--text-secondary);
             text-align: right;
+            margin-bottom: 40px;
+            font-size: 0.9em;
         }
     </style>
 </head>
+
 <body>
-    <h1>Privacy Policy for Patch Collector</h1>
-    
-    <p class="last-updated">Last Updated: 4-April-2025</p>
-    
+    <h1>Privacy Policy</h1>
+
+
+
     <section>
         <h2>Introduction</h2>
         <p>
-            At Patch Collector, we respect your privacy and are committed to protecting your personal information. This Privacy Policy explains how we collect, use, and safeguard your information when you use our Chrome extension.
+            This Privacy Policy explains how the Patch Collector extension (developed by opes.dev) collects,
+            use,
+            and safeguard your information.
         </p>
     </section>
-    
+
     <section>
         <h2>Information We Collect</h2>
         <p>
             Our extension collects the following limited information:
         </p>
         <ul>
-            <li><strong>Extension Settings:</strong> We store your extension preferences (such as enabled/disabled state) locally in Chrome's storage API.</li>
-            <li><strong>Website Data:</strong> When you use our extension on the Line6 CustomTone website, we temporarily process patch information that appears on the page to facilitate patch downloads.</li>
+            <li><strong>Extension Settings:</strong> We store the extension's active state (enabled/disabled) locally in
+                your browser to remember your preference.</li>
+            <li><strong>Website Data:</strong> When you use our extension on the Line6 CustomTone website, we
+                temporarily process patch information that appears on the page to facilitate patch downloads.</li>
         </ul>
         <p>
             We do <strong>not</strong> collect:
@@ -73,7 +144,7 @@
             <li>Any login credentials or passwords</li>
         </ul>
     </section>
-    
+
     <section>
         <h2>How We Use Your Information</h2>
         <p>
@@ -85,37 +156,43 @@
             <li>Improving the functionality of the extension</li>
         </ul>
     </section>
-    
+
     <section>
         <h2>Data Storage and Security</h2>
         <p>
-            All settings are stored locally in your browser using Chrome's storage API. No data is sent to our servers or any third-party servers, except when:
+            All settings are stored locally in your browser using Chrome's storage API. No data is sent to our servers
+            or any third-party servers, except when:
         </p>
         <ul>
             <li>Communicating with the Line6 CustomTone website to fetch patch information</li>
             <li>Downloading patches that you explicitly request</li>
         </ul>
     </section>
-    
+
     <section>
         <h2>Third-Party Access</h2>
         <p>
-            We do not share any information with third parties. Our extension only interacts with the Line6 CustomTone website for the sole purpose of helping you download patches.
+            We do not share any information with third parties. Our extension only interacts with the Line6 CustomTone
+            website for the sole purpose of helping you download patches.
         </p>
     </section>
-    
+
     <section>
         <h2>Permissions We Request</h2>
         <p>
             Our extension requests the following permissions, and here's why we need them:
         </p>
         <ul>
-            <li><strong>activeTab:</strong> This allows our extension to interact with the Line6 CustomTone website when you're actively using it. We need this to identify and process patch information on the page.</li>
-            <li><strong>storage:</strong> This allows our extension to save your preferences, such as whether the extension is enabled or disabled.</li>
-            <li><strong>Host Permission (line6.com):</strong> This allows our extension to operate specifically on the Line6 CustomTone website.</li>
+            <li><strong>activeTab:</strong> This allows our extension to interact with the Line6 CustomTone website when
+                you're actively using it. We need this to identify and process patch information on the page.</li>
+            <li><strong>storage:</strong> This allows our extension to save your preferences, such as whether the
+                extension is enabled or disabled.</li>
+            <li><strong>Host Permission (line6.com):</strong> This grants our extension specific access to run scripts
+                and
+                read content only on the Line6 website, which is necessary to extract patch data.</li>
         </ul>
     </section>
-    
+
     <section>
         <h2>Your Rights</h2>
         <p>
@@ -126,16 +203,52 @@
             <li>Clear all stored settings by clearing your browser data</li>
         </ul>
     </section>
-    
+
     <section>
         <h2>Changes to This Policy</h2>
         <p>
-            We may update our Privacy Policy from time to time. We will notify you of any changes by updating the "Last Updated" date at the top of this policy. We encourage you to review this Privacy Policy periodically for any changes.
+            We may update our Privacy Policy from time to time. We will notify you of any changes by updating the "Last
+            Updated" date at the top of this policy. We encourage you to review this Privacy Policy periodically for any
+            changes.
         </p>
     </section>
-    
-       <footer>
-        <p>Patch Collector v1.0.0 • Developed by <a href="https://github.com/opesoid/" target="_blank">Opes</a></p>
+
+    <section>
+        <h2>Contact Us</h2>
+        <p>
+            If you have any questions or concerns about this Privacy Policy or our extension, please contact us at:
+        </p>
+        <p>
+            <strong>Email:</strong> <a href="mailto:support@opes.dev">support@opes.dev</a>
+        </p>
+    </section>
+
+    <section>
+        <h2>Support This Project</h2>
+        <p>
+            If you find Patch Collector useful, please consider supporting its development!
+        </p>
+        <div style="margin-top: 20px;">
+            <a href="https://buymeacoffee.com/opesoid" target="_blank"
+                style="display: inline-flex; align-items: center; background-color: #FFDD00; color: #000000; text-decoration: none; font-weight: 700; font-size: 16px; padding: 12px 24px; border-radius: 8px; transition: transform 0.2s;">
+                <svg style="width: 20px; height: 20px; margin-right: 8px;" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 24 24" fill="currentColor">
+                    <path
+                        d="M2,21H20V19H2M20,8H18V5H20M20,3H4V13A4,4 0 0,0 8,17H14A4,4 0 0,0 18,13V10H20A2,2 0 0,0 22,8V5C22,3.89 21.1,3 20,3Z" />
+                </svg>
+                Buy me a coffee
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        <p>Patch Collector v1.1 • Developed by <a href="https://opes.dev" target="_blank">opes.dev</a> • <a
+                href="guide.html">User Guide</a></p>
+        <p style="font-size: 0.85em; opacity: 0.7; margin-top: 4px;">Last updated: 5th February 2025</p>
+        <p style="font-size: 0.85em; opacity: 0.7; margin-top: 8px;">
+            Not affiliated with Line 6 or Yamaha Guitar Group, Inc.
+        </p>
     </footer>
 </body>
-</html> 
+
+</html>

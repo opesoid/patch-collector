@@ -1,14 +1,14 @@
 {
   "manifest_version": 3,
   "name": "Patch Collector",
-  "version": "1.0.0",
-  "description": "Download and organize guitar patches from Line6 CustomTone website",
+  "version": "1.1",
+  "description": "Bulk download patches with smart renaming and advanced search for Line6 CustomTone.",
   "permissions": [
     "activeTab",
     "storage"
   ],
   "host_permissions": [
-    "https://line6.com/*"
+    "https://line6.com/customtone/*"
   ],
   "action": {
     "default_popup": "popup/popup.html",
@@ -20,23 +20,32 @@
   },
   "content_scripts": [
     {
-      "matches": ["https://line6.com/customtone/*"],
+      "matches": [
+        "https://line6.com/customtone/*"
+      ],
       "js": [
         "js/constants.js",
         "js/utils.js",
         "js/progress.js",
-        "js/modal.js",
         "js/downloader.js",
         "js/ui.js",
         "js/content.js"
       ],
-      "css": ["css/styles.css"]
+      "css": [
+        "css/styles.css"
+      ]
     }
   ],
   "web_accessible_resources": [
     {
-      "resources": ["guide.html", "privacy_policy.html"],
-      "matches": ["<all_urls>"]
+      "resources": [
+        "guide.html",
+        "privacy_policy.html",
+        "icons/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
     }
   ],
   "icons": {
@@ -44,4 +53,4 @@
     "48": "icons/icon48.png",
     "128": "icons/icon128.png"
   }
-} 
+}
