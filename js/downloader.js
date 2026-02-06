@@ -1,23 +1,23 @@
-const downloadCurrentPage = async (saveMetadata = false) => {
+const downloadCurrentPage = async () => {
     const buttons = getDownloadButtons(document)
     if (!buttons.length) return
 
     for (const button of buttons) {
-        await downloadPatchWithMetadata(button, saveMetadata);
-        
+        await downloadPatchWithMetadata(button);
+
         // Add a small delay to prevent browser throttling
         await new Promise(resolve => setTimeout(resolve, 1))
     }
 }
 
-const downloadAllPages = async (deviceChoice, numPages, saveMetadata = false) => {
+const downloadAllPages = async (deviceChoice, numPages) => {
     const devicePattern = DEVICE_OPTIONS[deviceChoice]
     if (!devicePattern) return
 
     for (let page = 1; page <= numPages; page++) {
         const url = buildSearchUrl(deviceChoice, page)
         const doc = await fetchPage(url)
-        
+
         if (!doc) continue
 
         const buttons = getDownloadButtons(doc)
@@ -27,22 +27,22 @@ const downloadAllPages = async (deviceChoice, numPages, saveMetadata = false) =>
         }
 
         for (const button of buttons) {
-            await downloadPatchWithMetadata(button, saveMetadata);
-            
+            await downloadPatchWithMetadata(button);
+
             // Add a small delay to prevent browser throttling
             await new Promise(resolve => setTimeout(resolve, 1))
         }
     }
 }
 
-const downloadKeywordPatches = async (deviceChoice, searchTerm, numPages, saveMetadata = false) => {
+const downloadKeywordPatches = async (deviceChoice, searchTerm, numPages) => {
     const devicePattern = DEVICE_OPTIONS[deviceChoice]
     if (!devicePattern) return
 
     for (let page = 1; page <= numPages; page++) {
         const url = buildSearchUrl(deviceChoice, page, searchTerm)
         const doc = await fetchPage(url)
-        
+
         if (!doc) continue
 
         const buttons = getDownloadButtons(doc)
@@ -52,8 +52,8 @@ const downloadKeywordPatches = async (deviceChoice, searchTerm, numPages, saveMe
         }
 
         for (const button of buttons) {
-            await downloadPatchWithMetadata(button, saveMetadata);
-            
+            await downloadPatchWithMetadata(button);
+
             // Add a small delay to prevent browser throttling
             await new Promise(resolve => setTimeout(resolve, 1))
         }
